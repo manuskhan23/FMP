@@ -1,0 +1,169 @@
+/* 🌈 Animated Gradient Background */
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg, #007bff, #00d4ff, #0b8457, #ff6f61);
+  background-size: 400% 400%;
+  animation: gradientAnimation 12s ease infinite;
+}
+
+/* 🪄 Entry Animation for Quiz Box */
+@keyframes slideIn {
+  0% { transform: translateY(-80px) scale(0.8); opacity: 0; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+/* 📦 Quiz Container */
+.quiz-container {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 35px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 430px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  animation: slideIn 0.8s ease;
+  color: #fff;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* ✨ Title Glow Animation */
+@keyframes glow {
+  from { text-shadow: 0 0 5px #fff, 0 0 10px #00d4ff, 0 0 20px #00d4ff; }
+  to { text-shadow: 0 0 20px #fff, 0 0 30px #007bff, 0 0 50px #007bff; }
+}
+
+/* ⏳ Timer */
+.timer-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 8px 20px;
+  border-radius: 30px;
+  margin-bottom: 25px;
+  box-shadow: 0 0 10px #00ffcc;
+  animation: pulse 2s infinite;
+}
+
+.timer-box i {
+  color: #00ffcc;
+  font-size: 1.2rem;
+}
+
+#time {
+  font-weight: bold;
+  color: #00ffcc;
+  font-size: 1.2rem;
+}
+
+/* 🫧 Pulse Animation for Timer */
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 10px #00ffcc; }
+  50% { transform: scale(1.05); box-shadow: 0 0 25px #00ffcc; }
+  100% { transform: scale(1); box-shadow: 0 0 10px #00ffcc; }
+}
+
+/* 📝 Question */
+.question-box h4 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+/* 🟦 Options */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.option input {
+  display: none;
+}
+
+label {
+  display: block;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 2px solid transparent;
+  font-size: 1rem;
+}
+
+label:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-3px) scale(1.02);
+}
+
+input[type="radio"]:checked + label {
+  background: linear-gradient(90deg, #007bff, #00d4ff);
+  color: #fff;
+  border: none;
+  box-shadow: 0 0 20px #00d4ff;
+  animation: bounce 0.4s;
+}
+
+/* 🎯 Bounce Animation when option selected */
+@keyframes bounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+/* 🟢 Next Button */
+#btn {
+  margin-top: 25px;
+  background: linear-gradient(90deg, #007bff, #00d4ff);
+  color: #fff;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 0 20px #00d4ff;
+  transition: 0.3s;
+}
+
+#btn:hover:enabled {
+  transform: scale(1.08);
+  box-shadow: 0 0 30px #00d4ff;
+}
+
+#btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* 📱 Responsive */
+@media (max-width: 480px) {
+  .quiz-container {
+    padding: 25px 15px;
+  }
+  .title {
+    font-size: 1.6rem;
+  }
+  label {
+    font-size: 0.9rem;
+  }
+}
