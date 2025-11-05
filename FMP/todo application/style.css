@@ -1,0 +1,103 @@
+  body {
+    background: linear-gradient(135deg, #2b5876, #4e4376);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    animation: slide-in 0.6s ease;
+  }
+
+  h1 {
+    margin-top: 40px;
+    font-size: 2.8rem;
+    text-shadow: 0 0 15px #fff, 0 0 30px cyan;
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  .container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 15px;
+    margin-top: 30px;
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+    width: 90%;
+    max-width: 500px;
+  }
+
+  input {
+    padding: 10px;
+    width: 65%;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+  }
+
+  input:focus {
+    box-shadow: 0 0 15px cyan;
+  }
+
+  button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.3s;
+  }
+
+  button:hover {
+    transform: scale(1.08);
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+
+  li {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    animation: slide-up 0.4s ease;
+  }
+
+  li button {
+    margin-left: 8px;
+    color: black;
+    font-weight: 600;
+    transition: 0.2s;
+  }
+
+  li button:hover {
+    opacity: 0.9;
+  }
+
+  @keyframes slide-in {
+    0% { opacity: 0; transform: translateY(-30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slide-up {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes glow {
+    from { text-shadow: 0 0 15px cyan; }
+    to { text-shadow: 0 0 25px cyan, 0 0 40px #fff; }
+  }
